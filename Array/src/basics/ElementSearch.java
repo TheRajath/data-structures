@@ -22,7 +22,7 @@ public class ElementSearch {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the size of the array: ");
+        System.out.println("Enter the size of the array:");
 
         if (scanner.hasNextInt()) {
 
@@ -31,7 +31,7 @@ public class ElementSearch {
 
         int[] array = new int[size];
 
-        System.out.println("Enter the elements of the array: ");
+        System.out.println("Enter the elements of the array:");
 
         for (int i = 0; i < size; i++) {
 
@@ -41,7 +41,7 @@ public class ElementSearch {
             }
         }
 
-        System.out.println("Enter the element to be search: ");
+        System.out.println("Enter the element to be search:");
 
         if (scanner.hasNextInt()) {
 
@@ -56,7 +56,9 @@ public class ElementSearch {
 
         } else {
 
-            System.out.println("Element not found");
+            System.out.println("Element not found.");
         }
+
     }
+
 }
