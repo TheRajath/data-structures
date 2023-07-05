@@ -114,14 +114,12 @@ public class Rotation {
             choice = scanner.nextInt();
         }
 
-        int[] rotatedArray = new int[100];
-
-        switch (choice) {
-            case 1 -> rotatedArray = leftRotate(array, size, numberOfTimesToRotate);
-            case 2 -> rotatedArray = rightRotate(array, size, numberOfTimesToRotate);
-            case 3 -> rotatedArray = rightRotateUsingTemporaryArray(array, size, numberOfTimesToRotate);
-            default -> System.exit(0);
-        }
+        int[] rotatedArray = switch (choice) {
+            case 1 -> leftRotate(array, size, numberOfTimesToRotate);
+            case 2 -> rightRotate(array, size, numberOfTimesToRotate);
+            case 3 -> rightRotateUsingTemporaryArray(array, size, numberOfTimesToRotate);
+            default -> throw new IllegalStateException("Unexpected value: " + choice);
+        };
 
         System.out.println("Rotated Array:");
 
