@@ -10,7 +10,7 @@ public class InsertNode {
 
         CustomLinkedList customLinkedList = new CustomLinkedList();
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 20; i > 0; i--) {
 
             customLinkedList.push(i);
         }
@@ -67,7 +67,7 @@ public class InsertNode {
                     customLinkedList.append(data);
                 }
 
-                case 3 -> customLinkedList.printList();
+                case 3 -> customLinkedList.printList(customLinkedList.head);
 
                 case 4 -> {
 
@@ -80,7 +80,7 @@ public class InsertNode {
                 }
             }
 
-        } while (choice != 4);
+        } while (choice != 5);
 
     }
 

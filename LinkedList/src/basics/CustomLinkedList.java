@@ -30,11 +30,30 @@ public class CustomLinkedList {
         last.next = newNode;
     }
 
+    SingleNode reverse(SingleNode node) {
+
+        SingleNode previous = null;
+        SingleNode current = node;
+        SingleNode next;
+
+        while (current != null) {
+
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        node = previous;
+
+        return node;
+    }
+
     int length(SingleNode head) {
 
         int length = 0;
 
-        while(head != null) {
+        while (head != null) {
 
             length++;
 
@@ -44,15 +63,13 @@ public class CustomLinkedList {
         return length;
     }
 
-    void printList() {
+    void printList(SingleNode head) {
 
-        SingleNode node = head;
+        while (head != null) {
 
-        while (node != null) {
+            System.out.print(head.data + " ");
 
-            System.out.print(node.data + " ");
-
-            node = node.next;
+            head = head.next;
         }
 
         System.out.println();
