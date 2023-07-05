@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class SearchElement {
 
-    private static int elementSearch(int[] array, int size, int element) {
+    static int elementSearch(int[] array, int size, int element) {
 
         for (int i = 0; i < size; i++) {
 
