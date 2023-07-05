@@ -2,13 +2,26 @@ package basics;
 
 import java.util.Scanner;
 
-import static basics.SearchElement.elementSearch;
+import static search.BinarySearch.binarySearch;
+import static search.LinearSearch.elementSearch;
 
 public class DeleteElement {
 
-    private static int deleteElement(int[] array, int size, int element) {
+    private static int deleteElementInSortedArray(int[] array, int size, int element) {
+
+        int position = binarySearch(array, size, element);
+
+        return deleteElement(array, size, position);
+    }
+
+    private static int deleteElementInUnsortedArray(int[] array, int size, int element) {
 
         int position = elementSearch(array, size, element);
+
+        return deleteElement(array, size, position);
+    }
+
+    private static int deleteElement(int[] array, int size, int position) {
 
         if (position == -1) {
 
@@ -28,8 +41,18 @@ public class DeleteElement {
 
         int size = 0;
         int element = 0;
+        int choice = 0;
 
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("1. Delete in sorted Array");
+        System.out.println("2. Delete in un-sorted Array");
+        System.out.println("Enter your choice:");
+
+        if (scanner.hasNextInt()) {
+
+            choice = scanner.nextInt();
+        }
 
         System.out.println("Enter the size of the array:");
 
@@ -57,7 +80,16 @@ public class DeleteElement {
             element = scanner.nextInt();
         }
 
-        var sizeAfterDeletion = deleteElement(array, size, element);
+        int sizeAfterDeletion;
+
+        if (1 == choice) {
+
+            sizeAfterDeletion = deleteElementInSortedArray(array, size, element);
+
+        } else {
+
+            sizeAfterDeletion = deleteElementInUnsortedArray(array, size, element);
+        }
 
         System.out.println("Array after deleting " + element);
 
