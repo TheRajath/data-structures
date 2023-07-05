@@ -6,13 +6,17 @@ public class SubArrays {
 
     private static void subArrays(int[] array, int start, int end) {
 
-        if (end == array.length)
-            return;
+        if (end == array.length) {
 
-        if (start > end)
+            return;
+        }
+
+        if (start > end) {
+
             subArrays(array, 0, end + 1);
 
-        else {
+        } else {
+
             System.out.print("[");
 
             for (int i = start; i < end; i++) {
