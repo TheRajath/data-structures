@@ -118,7 +118,7 @@ public class Rotation {
             case 1 -> leftRotate(array, size, numberOfTimesToRotate);
             case 2 -> rightRotate(array, size, numberOfTimesToRotate);
             case 3 -> rightRotateUsingTemporaryArray(array, size, numberOfTimesToRotate);
-            default -> throw new IllegalStateException("Unexpected value: " + choice);
+            default -> throw new IllegalStateException("Unexpected choice: " + choice);
         };
 
         System.out.println("Rotated Array:");
