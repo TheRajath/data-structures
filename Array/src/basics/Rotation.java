@@ -2,6 +2,8 @@ package basics;
 
 import java.util.Scanner;
 
+import static java.lang.System.arraycopy;
+
 public class Rotation {
 
     private static int[] leftRotate(int[] array, int size, int numberOfTimesToRotate) {
@@ -29,7 +31,7 @@ public class Rotation {
 
         int arrayLength = size - 1;
 
-        for (int position = 0; position < numberOfTimesToRotate; position++) {
+        for (int timesToRotate = 0; timesToRotate < numberOfTimesToRotate; timesToRotate++) {
 
             int last = array[arrayLength];
 
@@ -41,6 +43,29 @@ public class Rotation {
             array[0] = last;
 
         }
+
+        return array;
+    }
+
+    private static int[] rightRotateUsingTemporaryArray(int[] array, int size, int numberOfTimesToRotate) {
+
+        int[] temporary = new int[size];
+
+        int current = 0;
+
+        for (int i = numberOfTimesToRotate; i < size; i++) {
+
+            temporary[current] = array[i];
+            current++;
+        }
+
+        for (int i = 0; i < numberOfTimesToRotate; i++) {
+
+            temporary[current] = array[i];
+            current++;
+        }
+
+        arraycopy(temporary, 0, array, 0, size);
 
         return array;
     }
@@ -81,6 +106,7 @@ public class Rotation {
 
         System.out.println("1. Left Rotate");
         System.out.println("2. Right Rotate");
+        System.out.println("3. Right Rotate using temporary array");
         System.out.println("Enter your choice:");
 
         if (scanner.hasNextInt()) {
@@ -93,6 +119,7 @@ public class Rotation {
         switch (choice) {
             case 1 -> rotatedArray = leftRotate(array, size, numberOfTimesToRotate);
             case 2 -> rotatedArray = rightRotate(array, size, numberOfTimesToRotate);
+            case 3 -> rotatedArray = rightRotateUsingTemporaryArray(array, size, numberOfTimesToRotate);
             default -> System.exit(0);
         }
 
