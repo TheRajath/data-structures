@@ -2,7 +2,7 @@ package basics;
 
 import java.util.Scanner;
 
-public class ElementSearch {
+public class SearchElement {
 
     private static int elementSearch(int[] array, int size, int element) {
 
