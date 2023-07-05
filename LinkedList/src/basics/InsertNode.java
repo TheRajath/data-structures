@@ -43,7 +43,8 @@ public class InsertNode {
             System.out.println("1. Insert data at the beginning of the LinkedList");
             System.out.println("2. Insert data at the end of the LinkedList");
             System.out.println("3. Show LinkedList");
-            System.out.println("4. Exit");
+            System.out.println("4. Length of the LinkedList");
+            System.out.println("5. Exit");
 
             System.out.println("Enter your choice:");
 
@@ -67,6 +68,13 @@ public class InsertNode {
                 }
 
                 case 3 -> customLinkedList.printList();
+
+                case 4 -> {
+
+                    int length = customLinkedList.length(customLinkedList.head);
+
+                    System.out.println("Length: " + length);
+                }
 
                 default -> { // do nothing
                 }
