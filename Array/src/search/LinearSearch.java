@@ -1,10 +1,10 @@
-package basics;
+package search;
 
 import java.util.Scanner;
 
-public class SearchElement {
+public class LinearSearch {
 
-    static int elementSearch(int[] array, int size, int element) {
+    public static int elementSearch(int[] array, int size, int element) {
 
         for (int i = 0; i < size; i++) {
 
