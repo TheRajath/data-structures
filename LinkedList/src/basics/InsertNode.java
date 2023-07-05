@@ -6,12 +6,16 @@ public class InsertNode {
 
     static Scanner scanner = new Scanner(System.in);
 
-    private static void insertInitialValues(CustomLinkedList customLinkedList) {
+    static CustomLinkedList insertInitialValues() {
+
+        CustomLinkedList customLinkedList = new CustomLinkedList();
 
         for (int i = 0; i < 20; i++) {
 
             customLinkedList.push(i);
         }
+
+        return customLinkedList;
     }
 
     private static int getData() {
@@ -32,9 +36,7 @@ public class InsertNode {
 
         int choice = 0;
 
-        CustomLinkedList customLinkedList = new CustomLinkedList();
-
-        insertInitialValues(customLinkedList);
+        CustomLinkedList customLinkedList = insertInitialValues();
 
         do {
 
