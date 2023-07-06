@@ -8,10 +8,10 @@ public class ReverseList {
 
         CustomLinkedList customLinkedList = insertInitialValues();
 
-        System.out.println("Original LinkedList");
+        System.out.println("Original LinkedList:");
         customLinkedList.printList(customLinkedList.head);
 
-        System.out.println("Reverse LinkedList");
+        System.out.println("Reverse LinkedList:");
         SingleNode head = customLinkedList.reverse(customLinkedList.head);
 
         customLinkedList.printList(head);
