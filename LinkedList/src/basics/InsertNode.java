@@ -18,7 +18,7 @@ public class InsertNode {
         return customLinkedList;
     }
 
-    private static int inputData() {
+    static int inputData() {
 
         int data = 0;
 
@@ -40,8 +40,8 @@ public class InsertNode {
 
         do {
 
-            System.out.println("1. Insert data at the beginning of the LinkedList");
-            System.out.println("2. Insert data at the end of the LinkedList");
+            System.out.println("1. Insert data at the beginning");
+            System.out.println("2. Insert data at the end");
             System.out.println("3. Show LinkedList");
             System.out.println("4. Length of the LinkedList");
             System.out.println("5. Exit");
