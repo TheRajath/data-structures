@@ -18,7 +18,7 @@ public class InsertNode {
         return customLinkedList;
     }
 
-    private static int getData() {
+    private static int inputData() {
 
         int data = 0;
 
@@ -57,13 +57,13 @@ public class InsertNode {
 
                 case 1 -> {
 
-                    int data = getData();
+                    int data = inputData();
                     customLinkedList.push(data);
                 }
 
                 case 2 -> {
 
-                    int data = getData();
+                    int data = inputData();
                     customLinkedList.append(data);
                 }
 
