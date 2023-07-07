@@ -11,6 +11,11 @@ public class CustomLinkedList {
         head = newNode;
     }
 
+    SingleNode deleteFromBeginning(SingleNode head) {
+
+        return head.next;
+    }
+
     void append(int newData) {
 
         SingleNode newNode = new SingleNode(newData);
@@ -28,6 +33,27 @@ public class CustomLinkedList {
         }
 
         last.next = newNode;
+    }
+
+    SingleNode deleteFromEnd(SingleNode head) {
+
+        SingleNode end = head;
+        SingleNode previous = null;
+
+        while (end.next != null) {
+
+            previous = end;
+            end = end.next;
+        }
+
+        if (previous == null) {
+
+            throw new ArrayIndexOutOfBoundsException("Linked List is Empty");
+        }
+
+        previous.next = null;
+
+        return head;
     }
 
     SingleNode reverse(SingleNode node) {
@@ -64,6 +90,11 @@ public class CustomLinkedList {
     }
 
     void printList(SingleNode head) {
+
+        if (head == null) {
+
+            throw new ArrayIndexOutOfBoundsException("Linked List is Empty");
+        }
 
         while (head != null) {
 
