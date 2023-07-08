@@ -29,10 +29,11 @@ public class DoublyLinkedListBasics {
         do {
 
             System.out.println("1. Insert data at the beginning");
-            System.out.println("2. Insert data after a given Node");
-            System.out.println("3. Length of the LinkedList");
-            System.out.println("4. Show LinkedList");
-            System.out.println("5. Exit");
+            System.out.println("2. Insert data before a given Node");
+            System.out.println("3. Insert data after a given Node");
+            System.out.println("4. Length of the LinkedList");
+            System.out.println("5. Show LinkedList");
+            System.out.println("6. Exit");
 
             System.out.println("Enter your choice:");
 
@@ -58,17 +59,29 @@ public class DoublyLinkedListBasics {
 
                     DoubleNode previousNode = doublyLinkedList.findNode(nodeData);
 
-                    doublyLinkedList.addNodeAfterGivenNode(previousNode, data);
+                    doublyLinkedList.addNodeBeforeGivenNode(previousNode, data);
                 }
 
                 case 3 -> {
+
+                    int data = inputData();
+
+                    System.out.println("Enter the Node to insert " + data + " after: ");
+                    int nodeData = scanner.nextInt();
+
+                    DoubleNode previousNode = doublyLinkedList.findNode(nodeData);
+
+                    doublyLinkedList.addNodeAfterGivenNode(previousNode, data);
+                }
+
+                case 4 -> {
 
                     int length = doublyLinkedList.length();
 
                     System.out.println("Length: " + length);
                 }
 
-                case 4 -> doublyLinkedList.printList();
+                case 5 -> doublyLinkedList.printList();
 
                 default -> { // do nothing
                 }
@@ -76,7 +89,7 @@ public class DoublyLinkedListBasics {
             }
 
 
-        } while (choice != 5);
+        } while (choice != 6);
 
     }
 

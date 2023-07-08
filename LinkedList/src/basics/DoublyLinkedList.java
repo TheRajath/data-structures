@@ -17,6 +17,29 @@ public class DoublyLinkedList {
         head = newNode;
     }
 
+    void addNodeBeforeGivenNode(DoubleNode nextNode, int newData) {
+
+        if (nextNode == null) {
+
+            throw new ArrayIndexOutOfBoundsException("Previous Node is null");
+        }
+
+        DoubleNode newNode = new DoubleNode(newData);
+
+        newNode.previous = nextNode.previous;
+        nextNode.previous = newNode;
+        newNode.next = nextNode;
+
+        if (newNode.previous != null) {
+
+            newNode.previous.next = newNode;
+
+        } else {
+
+            head = newNode;
+        }
+    }
+
     void addNodeAfterGivenNode(DoubleNode previousNode, int newData) {
 
         if (previousNode == null) {
