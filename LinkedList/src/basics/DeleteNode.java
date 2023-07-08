@@ -2,6 +2,7 @@ package basics;
 
 import java.util.Scanner;
 
+import static basics.InsertNode.inputData;
 import static basics.InsertNode.insertInitialValues;
 
 public class DeleteNode {
@@ -19,9 +20,10 @@ public class DeleteNode {
 
             System.out.println("1. Delete data from the beginning");
             System.out.println("2. Delete data from the end");
-            System.out.println("3. Show LinkedList");
+            System.out.println("3. Delete data from any position");
             System.out.println("4. Length of the LinkedList");
-            System.out.println("5. Exit");
+            System.out.println("5. Show LinkedList");
+            System.out.println("6. Exit");
 
             System.out.println("Enter your choice:");
 
@@ -34,7 +36,12 @@ public class DeleteNode {
 
                 case 1 -> head = customLinkedList.deleteFromBeginning(head);
                 case 2 -> head = customLinkedList.deleteFromEnd(head);
-                case 3 -> customLinkedList.printList(head);
+
+                case 3 -> {
+
+                    int position = inputData();
+                    head = customLinkedList.deleteFromAnyPosition(head, position);
+                }
 
                 case 4 -> {
 
@@ -42,6 +49,8 @@ public class DeleteNode {
 
                     System.out.println("Length: " + length);
                 }
+
+                case 5 -> customLinkedList.printList(head);
 
                 default -> { // do nothing
                 }

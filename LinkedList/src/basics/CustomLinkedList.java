@@ -56,6 +56,38 @@ public class CustomLinkedList {
         return head;
     }
 
+    SingleNode deleteFromAnyPosition(SingleNode head, int position) {
+
+        SingleNode temp = head;
+        SingleNode previous = head;
+
+        for (int i = 0; i < position; i++) {
+
+            if (i == 0 && position == 1) {
+
+                head = head.next;
+
+            } else {
+
+                if (i == position - 1 && temp != null) {
+
+                    previous.next = temp.next;
+
+                } else {
+
+                    previous = temp;
+
+                    if (previous == null)
+                        throw new ArrayIndexOutOfBoundsException("Position is greater then arrays length - " + length(head));
+
+                    temp = temp.next;
+                }
+            }
+        }
+
+        return head;
+    }
+
     SingleNode reverse(SingleNode node) {
 
         SingleNode previous = null;
