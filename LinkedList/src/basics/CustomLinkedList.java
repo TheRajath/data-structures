@@ -147,9 +147,14 @@ public class CustomLinkedList {
 
         while (head != null) {
 
-            System.out.print(head.data + " ");
+            System.out.print(head.data);
 
             head = head.next;
+
+            if (head != null) {
+
+                System.out.print(" -> ");
+            }
         }
 
         System.out.println();
