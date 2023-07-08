@@ -107,6 +107,23 @@ public class CustomLinkedList {
         return node;
     }
 
+    int getNthNode(SingleNode head, int index) {
+
+        int count = 0;
+        SingleNode current = head;
+
+        while (current != null) {
+
+            if (count == index)
+                return count;
+
+            count++;
+            current = current.next;
+        }
+
+        return 0;
+    }
+
     int length(SingleNode head) {
 
         int length = 0;

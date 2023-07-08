@@ -12,7 +12,7 @@ public class InsertNode {
 
         for (int i = 5; i > 0; i--) {
 
-            customLinkedList.push(i);
+            customLinkedList.push(i * 200);
         }
 
         return customLinkedList;

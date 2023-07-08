@@ -40,6 +40,10 @@ public class DeleteNode {
 
                     int position = 0;
 
+                    /*
+                    Position Starts with 1
+                    */
+
                     System.out.println("Enter the position:");
 
                     if (scanner.hasNextInt()) {
