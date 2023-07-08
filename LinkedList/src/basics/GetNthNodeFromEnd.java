@@ -15,7 +15,7 @@ public class GetNthNodeFromEnd {
 
         temp = head;
 
-        for (int i = 1; i < length - 1; i++) {
+        for (int i = 1; i < length - index + 1; i++) {
 
             temp = temp.next;
         }
@@ -48,6 +48,8 @@ public class GetNthNodeFromEnd {
         int data = getNthNodeFromEnd(head, length, index);
 
         System.out.println("Data: " + data);
+
+        customLinkedList.printList(head);
     }
 
 }

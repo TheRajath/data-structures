@@ -8,7 +8,6 @@ public class SingleNode {
     SingleNode(int data) {
 
         this.data = data;
-        next = null;
     }
 
 }
