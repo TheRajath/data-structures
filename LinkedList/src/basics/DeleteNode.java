@@ -2,7 +2,6 @@ package basics;
 
 import java.util.Scanner;
 
-import static basics.InsertNode.inputData;
 import static basics.InsertNode.insertInitialValues;
 
 public class DeleteNode {
@@ -39,7 +38,15 @@ public class DeleteNode {
 
                 case 3 -> {
 
-                    int position = inputData();
+                    int position = 0;
+
+                    System.out.println("Enter the position:");
+
+                    if (scanner.hasNextInt()) {
+
+                        position = scanner.nextInt();
+                    }
+
                     head = customLinkedList.deleteFromAnyPosition(head, position);
                 }
 
