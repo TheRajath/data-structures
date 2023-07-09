@@ -91,6 +91,25 @@ public class DoublyLinkedList {
         return length;
     }
 
+    void reverse() {
+
+        DoubleNode temp = null;
+        DoubleNode current = head;
+
+        while (current != null) {
+
+            temp = current.previous;
+            current.previous = current.next;
+            current.next = temp;
+            current = current.previous;
+        }
+
+        if (temp != null) {
+
+            head = temp.previous;
+        }
+    }
+
     void printList() {
 
         DoubleNode current = head;

@@ -1,5 +1,6 @@
 package basics;
 
+import static basics.DoublyLinkedListBasics.initializeDoublyLinkedList;
 import static basics.InsertNode.insertInitialValues;
 
 public class ReverseList {
@@ -8,13 +9,23 @@ public class ReverseList {
 
         CustomLinkedList customLinkedList = insertInitialValues();
 
-        System.out.println("Original LinkedList:");
+        System.out.println("Singly LinkedList");
+        System.out.println("Original:");
         customLinkedList.printList(customLinkedList.head);
 
-        System.out.println("Reverse LinkedList:");
+        System.out.println("Reversed:");
         SingleNode head = customLinkedList.reverse(customLinkedList.head);
-
         customLinkedList.printList(head);
+
+        System.out.println("\nDoubly LinkedList");
+        DoublyLinkedList doublyLinkedList = initializeDoublyLinkedList();
+
+        System.out.println("Original:");
+        doublyLinkedList.printList();
+
+        System.out.println("Reverse:");
+        doublyLinkedList.reverse();
+        doublyLinkedList.printList();
     }
 
 }
