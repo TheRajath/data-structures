@@ -54,7 +54,7 @@ public class CustomLinkedList {
         previous.next = null;
     }
 
-    SingleNode deleteFromAnyPosition(int position) {
+    void deleteFromAnyPosition(int position) {
 
         SingleNode temp = head;
         SingleNode previous = head;
@@ -82,11 +82,9 @@ public class CustomLinkedList {
                 }
             }
         }
-
-        return head;
     }
 
-    SingleNode reverse() {
+    void reverse() {
 
         SingleNode previous = null;
         SingleNode current = head;
@@ -101,8 +99,6 @@ public class CustomLinkedList {
         }
 
         head = previous;
-
-        return head;
     }
 
     int getNthNode(int index) {
