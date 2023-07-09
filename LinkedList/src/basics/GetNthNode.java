@@ -26,7 +26,7 @@ public class GetNthNode {
             index = scanner.nextInt();
         }
 
-        int data = customLinkedList.getNthNode(head, index);
+        int data = customLinkedList.getNthNode(index);
 
         System.out.println("Data: " + data);
     }

@@ -11,9 +11,9 @@ public class CustomLinkedList {
         head = newNode;
     }
 
-    SingleNode deleteFromBeginning(SingleNode head) {
+    void deleteFromBeginning() {
 
-        return head.next;
+        head = head.next;
     }
 
     void append(int newData) {
@@ -35,7 +35,7 @@ public class CustomLinkedList {
         last.next = newNode;
     }
 
-    SingleNode deleteFromEnd(SingleNode head) {
+    void deleteFromEnd() {
 
         SingleNode end = head;
         SingleNode previous = null;
@@ -52,11 +52,9 @@ public class CustomLinkedList {
         }
 
         previous.next = null;
-
-        return head;
     }
 
-    SingleNode deleteFromAnyPosition(SingleNode head, int position) {
+    SingleNode deleteFromAnyPosition(int position) {
 
         SingleNode temp = head;
         SingleNode previous = head;
@@ -78,7 +76,7 @@ public class CustomLinkedList {
                     previous = temp;
 
                     if (previous == null)
-                        throw new ArrayIndexOutOfBoundsException("Position is greater then arrays length - " + length(head));
+                        throw new ArrayIndexOutOfBoundsException("Position is greater then arrays length - " + length());
 
                     temp = temp.next;
                 }
@@ -88,10 +86,10 @@ public class CustomLinkedList {
         return head;
     }
 
-    SingleNode reverse(SingleNode node) {
+    SingleNode reverse() {
 
         SingleNode previous = null;
-        SingleNode current = node;
+        SingleNode current = head;
         SingleNode next;
 
         while (current != null) {
@@ -102,12 +100,12 @@ public class CustomLinkedList {
             current = next;
         }
 
-        node = previous;
+        head = previous;
 
-        return node;
+        return head;
     }
 
-    int getNthNode(SingleNode head, int index) {
+    int getNthNode(int index) {
 
         int count = 0;
         SingleNode current = head;
@@ -124,7 +122,7 @@ public class CustomLinkedList {
         return 0;
     }
 
-    int length(SingleNode head) {
+    int length() {
 
         int length = 0;
 
@@ -138,20 +136,22 @@ public class CustomLinkedList {
         return length;
     }
 
-    void printList(SingleNode head) {
+    void printList() {
 
-        if (head == null) {
+        SingleNode current = head;
+
+        if (current == null) {
 
             throw new ArrayIndexOutOfBoundsException("Linked List is Empty");
         }
 
-        while (head != null) {
+        while (current != null) {
 
-            System.out.print(head.data);
+            System.out.print(current.data);
 
-            head = head.next;
+            current = current.next;
 
-            if (head != null) {
+            if (current != null) {
 
                 System.out.print(" -> ");
             }

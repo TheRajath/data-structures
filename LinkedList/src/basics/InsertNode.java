@@ -69,12 +69,12 @@ public class InsertNode {
 
                 case 3 -> {
 
-                    int length = customLinkedList.length(customLinkedList.head);
+                    int length = customLinkedList.length();
 
                     System.out.println("Length: " + length);
                 }
 
-                case 4 -> customLinkedList.printList(customLinkedList.head);
+                case 4 -> customLinkedList.printList();
 
                 default -> { // do nothing
                 }
