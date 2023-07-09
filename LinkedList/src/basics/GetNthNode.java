@@ -11,7 +11,6 @@ public class GetNthNode {
         Scanner scanner = new Scanner(System.in);
 
         CustomLinkedList customLinkedList = insertInitialValues();
-        SingleNode head = customLinkedList.head;
 
         int index = 0;
 

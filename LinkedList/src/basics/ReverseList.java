@@ -14,7 +14,6 @@ public class ReverseList {
         customLinkedList.printList();
 
         System.out.println("Reversed:");
-        SingleNode head = customLinkedList.reverse();
         customLinkedList.printList();
 
         System.out.println("\nDoubly LinkedList");

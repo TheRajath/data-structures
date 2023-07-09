@@ -13,7 +13,6 @@ public class DeleteNode {
         Scanner scanner = new Scanner(System.in);
 
         CustomLinkedList customLinkedList = insertInitialValues();
-        SingleNode head = customLinkedList.head;
 
         do {
 
@@ -51,7 +50,7 @@ public class DeleteNode {
                         position = scanner.nextInt();
                     }
 
-                    head = customLinkedList.deleteFromAnyPosition(position);
+                    customLinkedList.deleteFromAnyPosition(position);
                 }
 
                 case 4 -> {
