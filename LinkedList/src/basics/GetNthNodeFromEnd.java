@@ -43,13 +43,11 @@ public class GetNthNodeFromEnd {
             index = scanner.nextInt();
         }
 
-        int length = customLinkedList.length(head);
+        int length = customLinkedList.length();
 
         int data = getNthNodeFromEnd(head, length, index);
 
         System.out.println("Data: " + data);
-
-        customLinkedList.printList(head);
     }
 
 }

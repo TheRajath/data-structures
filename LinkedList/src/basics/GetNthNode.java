@@ -11,7 +11,6 @@ public class GetNthNode {
         Scanner scanner = new Scanner(System.in);
 
         CustomLinkedList customLinkedList = insertInitialValues();
-        SingleNode head = customLinkedList.head;
 
         int index = 0;
 
@@ -26,7 +25,7 @@ public class GetNthNode {
             index = scanner.nextInt();
         }
 
-        int data = customLinkedList.getNthNode(head, index);
+        int data = customLinkedList.getNthNode(index);
 
         System.out.println("Data: " + data);
     }

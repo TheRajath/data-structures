@@ -13,7 +13,6 @@ public class DeleteNode {
         Scanner scanner = new Scanner(System.in);
 
         CustomLinkedList customLinkedList = insertInitialValues();
-        SingleNode head = customLinkedList.head;
 
         do {
 
@@ -33,8 +32,8 @@ public class DeleteNode {
 
             switch (choice) {
 
-                case 1 -> head = customLinkedList.deleteFromBeginning(head);
-                case 2 -> head = customLinkedList.deleteFromEnd(head);
+                case 1 -> customLinkedList.deleteFromBeginning();
+                case 2 -> customLinkedList.deleteFromEnd();
 
                 case 3 -> {
 
@@ -51,17 +50,17 @@ public class DeleteNode {
                         position = scanner.nextInt();
                     }
 
-                    head = customLinkedList.deleteFromAnyPosition(head, position);
+                    customLinkedList.deleteFromAnyPosition(position);
                 }
 
                 case 4 -> {
 
-                    int length = customLinkedList.length(head);
+                    int length = customLinkedList.length();
 
                     System.out.println("Length: " + length);
                 }
 
-                case 5 -> customLinkedList.printList(head);
+                case 5 -> customLinkedList.printList();
 
                 default -> { // do nothing
                 }
