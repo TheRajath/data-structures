@@ -59,6 +59,23 @@ public class DoublyLinkedList {
         }
     }
 
+    void deleteNode(DoubleNode nodeToDelete) {
+
+        if (head == null || nodeToDelete == null) {
+
+            throw new ArrayIndexOutOfBoundsException("List or the Node is null");
+        }
+
+        if (head == nodeToDelete)
+            head = nodeToDelete.next;
+
+        if (nodeToDelete.next != null)
+            nodeToDelete.next.previous = nodeToDelete.previous;
+
+        if (nodeToDelete.previous != null)
+            nodeToDelete.previous.next = nodeToDelete.next;
+    }
+
     DoubleNode findNode(int dataToFind) {
 
         DoubleNode current = head;
