@@ -28,6 +28,29 @@ public class CircularLinkedList {
         }
     }
 
+    void insertNodeAtEnd(int data) {
+
+        var newNode = new SingleNode(data);
+
+        if (head == null) {
+
+            head = newNode;
+            head.next = head;
+
+        } else {
+
+            SingleNode current = head;
+
+            while (current.next != head) {
+
+                current = current.next;
+            }
+
+            current.next = newNode;
+            newNode.next = head;
+        }
+    }
+
     void printList() {
 
         SingleNode current = head;

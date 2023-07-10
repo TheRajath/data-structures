@@ -1,5 +1,7 @@
 package basics;
 
+import java.util.Scanner;
+
 import static basics.InsertNode.inputData;
 
 public class CircularLinkedListBasics {
@@ -18,14 +20,48 @@ public class CircularLinkedListBasics {
 
     public static void main(String[] args) {
 
+        int choice = 0;
+
+        Scanner scanner = new Scanner(System.in);
+
         CircularLinkedList circularLinkedList = initializeCircularLinkedList();
 
-        System.out.println("1. Insert data at the beginning");
+        do {
 
-        int data = inputData();
-        circularLinkedList.push(data);
+            System.out.println("1. Insert data at the beginning");
+            System.out.println("2. Insert data at the end of the list");
+            System.out.println("3. Show LinkedList");
+            System.out.println("4. Exit");
 
-        circularLinkedList.printList();
+            System.out.println("Enter your choice:");
+
+            if (scanner.hasNextInt()) {
+
+                choice = scanner.nextInt();
+            }
+
+            switch (choice) {
+
+                case 1 -> {
+
+                    int data = inputData();
+                    circularLinkedList.push(data);
+                }
+
+                case 2 -> {
+
+                    int data = inputData();
+                    circularLinkedList.insertNodeAtEnd(data);
+                }
+
+                case 3 -> circularLinkedList.printList();
+
+                default -> { // do nothing
+                }
+
+            }
+
+        } while (choice != 4);
     }
 
 }
