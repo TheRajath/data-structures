@@ -88,7 +88,6 @@ public class DoublyLinkedListBasics {
 
             }
 
-
         } while (choice != 6);
 
     }
