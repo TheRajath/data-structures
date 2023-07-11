@@ -51,6 +51,21 @@ public class CircularLinkedList {
         }
     }
 
+    int getLength() {
+
+        int count = 0;
+        SingleNode current = head;
+
+        do {
+
+            current = current.next;
+            count++;
+
+        } while (current != head);
+
+        return count;
+    }
+
     void printList() {
 
         SingleNode current = head;
