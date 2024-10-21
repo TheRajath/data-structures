@@ -1,7 +1,7 @@
-package basics;
+package LinkedList;
 
-import static basics.DoublyLinkedListBasics.initializeDoublyLinkedList;
-import static basics.InsertNode.insertInitialValues;
+import static LinkedList.DoublyLinkedListBasics.initializeDoublyLinkedList;
+import static LinkedList.InsertNode.insertInitialValues;
 
 public class ReverseList {
 

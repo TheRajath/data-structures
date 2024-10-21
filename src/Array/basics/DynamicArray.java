@@ -1,4 +1,4 @@
-package basics;
+package Array.basics;
 
 public class DynamicArray {
 

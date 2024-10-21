@@ -1,8 +1,8 @@
-package basics;
+package LinkedList;
 
 import java.util.Scanner;
 
-import static basics.InsertNode.inputData;
+import static LinkedList.InsertNode.inputData;
 
 public class DoublyLinkedListBasics {
 

@@ -1,47 +1,35 @@
-package basics;
+package LinkedList;
 
 import java.util.Scanner;
 
-public class InsertNode {
+import static LinkedList.InsertNode.inputData;
 
-    static Scanner scanner = new Scanner(System.in);
+public class CircularLinkedListBasics {
 
-    static CustomLinkedList insertInitialValues() {
+    static CircularLinkedList initializeCircularLinkedList() {
 
-        CustomLinkedList customLinkedList = new CustomLinkedList();
+        var circularLinkedList = new CircularLinkedList();
+        circularLinkedList.push(1000);
+        circularLinkedList.push(800);
+        circularLinkedList.push(600);
+        circularLinkedList.push(400);
+        circularLinkedList.push(200);
 
-        for (int i = 5; i > 0; i--) {
-
-            customLinkedList.push(i * 200);
-        }
-
-        return customLinkedList;
-    }
-
-    static int inputData() {
-
-        int data = 0;
-
-        System.out.println("Enter the data:");
-
-        if (scanner.hasNextInt()) {
-
-            data = scanner.nextInt();
-        }
-
-        return data;
+        return circularLinkedList;
     }
 
     public static void main(String[] args) {
 
         int choice = 0;
 
-        CustomLinkedList customLinkedList = insertInitialValues();
+        Scanner scanner = new Scanner(System.in);
+
+        CircularLinkedList circularLinkedList = initializeCircularLinkedList();
 
         do {
 
             System.out.println("1. Insert data at the beginning");
-            System.out.println("2. Insert data at the end");
+            System.out.println("2. Insert data at the end of the list");
             System.out.println("3. Length of the LinkedList");
             System.out.println("4. Show LinkedList");
             System.out.println("5. Exit");
@@ -58,30 +46,30 @@ public class InsertNode {
                 case 1 -> {
 
                     int data = inputData();
-                    customLinkedList.push(data);
+                    circularLinkedList.push(data);
                 }
 
                 case 2 -> {
 
                     int data = inputData();
-                    customLinkedList.append(data);
+                    circularLinkedList.insertNodeAtEnd(data);
                 }
 
                 case 3 -> {
 
-                    int length = customLinkedList.length();
+                    int length = circularLinkedList.getLength();
 
                     System.out.println("Length: " + length);
                 }
 
-                case 4 -> customLinkedList.printList();
+                case 4 -> circularLinkedList.printList();
 
                 default -> { // do nothing
                 }
+
             }
 
         } while (choice != 5);
-
     }
 
 }

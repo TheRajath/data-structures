@@ -1,27 +1,27 @@
-package basics;
+package Array.basics;
 
 import java.util.Scanner;
 
-public class ReverseArray {
+public class SelectionSort {
 
-    private static int[] reverseArray(int[] array, int size) {
+    private static void selectionSort(int[] array, int size) {
 
-        int temp;
+        for (int i = 0; i < size - 1; i++) {
 
-        int start = 0;
-        int end = size - 1;
+            int minimumIndex = i;
 
-        while (start < end) {
+            for (int j = i + 1; j < size; j++) {
 
-            temp = array[end];
-            array[end] = array[start];
-            array[start] = temp;
+                if (array[j] < array[minimumIndex]) {
 
-            start++;
-            end--;
+                    minimumIndex = j;
+                }
+            }
+
+            int temp = array[minimumIndex];
+            array[minimumIndex] = array[i];
+            array[i] = temp;
         }
-
-        return array;
     }
 
     public static void main(String[] args) {
@@ -49,13 +49,13 @@ public class ReverseArray {
             }
         }
 
-        int[] reversedArray = reverseArray(array, size);
+        System.out.println("Sorted array:");
 
-        System.out.println("Reversed Array:");
+        selectionSort(array, size);
 
         for (int i = 0; i < size; i++) {
 
-            System.out.print(reversedArray[i] + " ");
+            System.out.print(array[i] + " ");
         }
 
     }

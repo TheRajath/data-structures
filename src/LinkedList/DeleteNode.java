@@ -1,8 +1,8 @@
-package basics;
+package LinkedList;
 
 import java.util.Scanner;
 
-import static basics.InsertNode.insertInitialValues;
+import static LinkedList.InsertNode.insertInitialValues;
 
 public class DeleteNode {
 

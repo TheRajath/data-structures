@@ -1,15 +1,26 @@
-package search;
+package Array.search;
 
 import java.util.Scanner;
 
-public class LinearSearch {
+public class BinarySearch {
 
-    public static int elementSearch(int[] array, int size, int element) {
+    public static int binarySearch(int[] array, int size, int element) {
 
-        for (int i = 0; i < size; i++) {
+        int left = 0;
+        int right = size - 1;
 
-            if (array[i] == element)
-                return i;
+        while (left <= right) {
+
+            int middle = left + (right - left) / 2;
+
+            if (array[middle] == element)
+                return middle;
+
+            if (array[middle] < element)
+                left = middle + 1;
+
+            else
+                right = middle - 1;
         }
 
         return -1;
@@ -48,7 +59,7 @@ public class LinearSearch {
             element = scanner.nextInt();
         }
 
-        int position = elementSearch(array, size, element);
+        int position = binarySearch(array, size, element);
 
         if (position != -1) {
 

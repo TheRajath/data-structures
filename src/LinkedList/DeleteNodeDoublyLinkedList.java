@@ -1,7 +1,7 @@
-package basics;
+package LinkedList;
 
-import static basics.DoublyLinkedListBasics.initializeDoublyLinkedList;
-import static basics.InsertNode.inputData;
+import static LinkedList.DoublyLinkedListBasics.initializeDoublyLinkedList;
+import static LinkedList.InsertNode.inputData;
 
 public class DeleteNodeDoublyLinkedList {
 

@@ -1,4 +1,4 @@
-package basics;
+package Array.basics;
 
 import java.util.Scanner;
 

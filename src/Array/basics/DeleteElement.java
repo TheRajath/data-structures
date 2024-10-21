@@ -1,9 +1,9 @@
-package basics;
+package Array.basics;
 
 import java.util.Scanner;
 
-import static search.BinarySearch.binarySearch;
-import static search.LinearSearch.elementSearch;
+import static Array.search.BinarySearch.binarySearch;
+import static Array.search.LinearSearch.elementSearch;
 
 public class DeleteElement {
 
