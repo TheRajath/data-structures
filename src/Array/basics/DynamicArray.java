@@ -4,7 +4,7 @@ public class DynamicArray {
 
     private int[] array;
     int size;
-    private int numberOfElementsAdded; // Depicts the number of elements added by you
+    int numberOfElementsAdded;
 
     public DynamicArray() {
 
@@ -25,7 +25,7 @@ public class DynamicArray {
 
     void add(int data) {
 
-        checkIfArrayIsFull();
+        growIfArrayIsFull();
 
         array[numberOfElementsAdded] = data;
         numberOfElementsAdded++;
@@ -33,8 +33,8 @@ public class DynamicArray {
 
     void addAtIndex(int index, int data) {
 
-        checkIfArrayIsFull();
         checkIfIndexOutOfBound(index);
+        growIfArrayIsFull();
 
         for (int i = numberOfElementsAdded; i > index; i--) {
 
@@ -74,7 +74,7 @@ public class DynamicArray {
         return array[index];
     }
 
-    private void checkIfArrayIsFull() {
+    private void growIfArrayIsFull() {
 
         if (numberOfElementsAdded == size) {
 
