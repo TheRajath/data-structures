@@ -4,13 +4,13 @@ public class DynamicArray {
 
     private int[] array;
     private int size;
-    private int count; // Depicts the number of elements added by you
+    private int numberOfElementsAdded; // Depicts the number of elements added by you
 
     public DynamicArray() {
 
         array = new int[1];
         size = 1;
-        count = 0;
+        numberOfElementsAdded = 0;
     }
 
     void printArray() {
@@ -27,31 +27,49 @@ public class DynamicArray {
 
         checkIfArrayIsFull();
 
-        array[count] = data;
-        count++;
+        array[numberOfElementsAdded] = data;
+        numberOfElementsAdded++;
     }
 
     void addAtIndex(int index, int data) {
 
         checkIfArrayIsFull();
+        checkIfIndexOutOfBound(index);
 
-        if (index < 0 || index > size) {
-
-            throw new IndexOutOfBoundsException("Index out of bounds");
-        }
-
-        for (int i = count; i > index; i--) {
+        for (int i = numberOfElementsAdded; i > index; i--) {
 
             array[i] = array[i - 1];
         }
 
         array[index] = data;
-        count++;
+        numberOfElementsAdded++;
+    }
+
+    void remove() {
+
+        if (numberOfElementsAdded > 0) {
+
+            array[numberOfElementsAdded - 1] = 0;
+            numberOfElementsAdded--;
+        }
+    }
+
+    void removeAtIndex(int index) {
+
+        checkIfIndexOutOfBound(index);
+
+        for (int i = index; i < numberOfElementsAdded - 1; i++) {
+
+            array[i] = array[i + 1];
+        }
+
+        array[numberOfElementsAdded - 1] = 0;
+        numberOfElementsAdded--;
     }
 
     private void checkIfArrayIsFull() {
 
-        if (count == size) {
+        if (numberOfElementsAdded == size) {
 
             growSize();
         }
@@ -61,7 +79,7 @@ public class DynamicArray {
 
         int[] temp = null;
 
-        if (count == size) {
+        if (numberOfElementsAdded == size) {
 
             temp = new int[size * 2];
 
@@ -76,6 +94,33 @@ public class DynamicArray {
         size = size * 2;
     }
 
+    void shrinkSize() {
+
+        int[] temp;
+
+        if (numberOfElementsAdded > 0) {
+
+            temp = new int[numberOfElementsAdded];
+
+            for (int i = 0; i < numberOfElementsAdded; i++) {
+
+                temp[i] = array[i];
+            }
+
+            size = numberOfElementsAdded;
+            array = temp;
+        }
+    }
+
+    private void checkIfIndexOutOfBound(int index) {
+
+        if (index < 0 || index > size) {
+
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+
+    }
+
     public static void main(String[] args) {
 
         DynamicArray dynamicArray = new DynamicArray();
@@ -87,12 +132,28 @@ public class DynamicArray {
 
         dynamicArray.add(1);
         dynamicArray.add(2);
+        dynamicArray.add(3);
+        dynamicArray.add(4);
+        dynamicArray.add(5);
 
         dynamicArray.printArray();
 
         System.out.println("Try to add data 45 at index 3");
         dynamicArray.addAtIndex(2, 45);
         dynamicArray.printArray();
+
+        System.out.println("Removes the last element from array");
+        dynamicArray.remove();
+        dynamicArray.printArray();
+
+        System.out.println("Removes the last element at index 3 from array (Position 4)");
+        dynamicArray.removeAtIndex(3);
+        dynamicArray.printArray();
+
+        System.out.println("Array of the size shrink");
+        dynamicArray.shrinkSize();
+        dynamicArray.printArray();
+
     }
 
 }
