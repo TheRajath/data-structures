@@ -3,7 +3,7 @@ package Array.basics;
 public class DynamicArray {
 
     private int[] array;
-    private int size;
+    int size;
     private int numberOfElementsAdded; // Depicts the number of elements added by you
 
     public DynamicArray() {
@@ -65,6 +65,13 @@ public class DynamicArray {
 
         array[numberOfElementsAdded - 1] = 0;
         numberOfElementsAdded--;
+    }
+
+    int get(int index) {
+
+        checkIfIndexOutOfBound(index);
+
+        return array[index];
     }
 
     private void checkIfArrayIsFull() {
@@ -153,6 +160,9 @@ public class DynamicArray {
         System.out.println("Array of the size shrink");
         dynamicArray.shrinkSize();
         dynamicArray.printArray();
+
+        System.out.println("Get the element at index 2");
+        System.out.println(dynamicArray.get(2));
 
     }
 
