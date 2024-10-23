@@ -7,21 +7,21 @@ import static Array.search.LinearSearch.elementSearch;
 
 public class DeleteElement {
 
-    private static int deleteElementInSortedArray(int[] array, int size, int element) {
+    int deleteElementInSortedArray(int[] array, int size, int element) {
 
         int position = binarySearch(array, size, element);
 
         return deleteElement(array, size, position);
     }
 
-    private static int deleteElementInUnsortedArray(int[] array, int size, int element) {
+    int deleteElementInUnsortedArray(int[] array, int size, int element) {
 
         int position = elementSearch(array, size, element);
 
         return deleteElement(array, size, position);
     }
 
-    private static int deleteElement(int[] array, int size, int position) {
+    private int deleteElement(int[] array, int size, int position) {
 
         if (position == -1) {
 
@@ -38,6 +38,8 @@ public class DeleteElement {
     }
 
     public static void main(String[] args) {
+
+        DeleteElement deleteElement = new DeleteElement();
 
         int size = 0;
         int element = 0;
@@ -84,11 +86,11 @@ public class DeleteElement {
 
         if (1 == choice) {
 
-            sizeAfterDeletion = deleteElementInSortedArray(array, size, element);
+            sizeAfterDeletion = deleteElement.deleteElementInSortedArray(array, size, element);
 
         } else {
 
-            sizeAfterDeletion = deleteElementInUnsortedArray(array, size, element);
+            sizeAfterDeletion = deleteElement.deleteElementInUnsortedArray(array, size, element);
         }
 
         System.out.println("Array after deleting " + element);

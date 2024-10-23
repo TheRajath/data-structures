@@ -27,7 +27,7 @@ class InsertElementTest {
     }
 
     @Test
-    void inserts_element_into_unsorted_array() {
+    void inserts_element_into_un_sorted_array() {
 
         int[] array = arrays.initializeUnsortedArray(6);
 

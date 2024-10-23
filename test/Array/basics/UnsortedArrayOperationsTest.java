@@ -66,6 +66,9 @@ class UnsortedArrayOperationsTest {
 
         assertEquals(4, resultArray.length);
         assertNotEquals(90, resultArray[2]);
+
+        assertThrows(NoSuchFieldException.class, () -> unsortedArrayOperations.deleteElement(resultArray, 90),
+                "Element not found");
     }
 
 }
