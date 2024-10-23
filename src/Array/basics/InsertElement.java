@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class InsertElement {
 
-    private static void insertElementInSortedArray(int[] array, int size, int element) {
+    void insertElementInSortedArray(int[] array, int size, int element) {
 
         int i;
 
@@ -16,7 +16,7 @@ public class InsertElement {
         array[i + 1] = element;
     }
 
-    private static void insertElementInUnsortedArray(int[] array, int size, int element, int position) {
+    void insertElementInUnsortedArray(int[] array, int size, int element, int position) {
 
         for (int i = size - 1; i >= position; i--) {
 
@@ -27,6 +27,8 @@ public class InsertElement {
     }
 
     public static void main(String[] args) {
+
+        InsertElement insertElement = new InsertElement();
 
         int size = 0;
         int element = 0;
@@ -74,7 +76,7 @@ public class InsertElement {
 
         if (1 == choice) {
 
-            insertElementInSortedArray(array, size, element);
+            insertElement.insertElementInSortedArray(array, size, element);
 
         } else {
 
@@ -85,7 +87,7 @@ public class InsertElement {
                 position = scanner.nextInt();
             }
 
-            insertElementInUnsortedArray(array, size, element, position);
+            insertElement.insertElementInUnsortedArray(array, size, element, position);
         }
 
         System.out.println("Array after inserting " + element + " at position " + position);
