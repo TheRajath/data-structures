@@ -11,7 +11,7 @@ public class DutchNationalFlag {
         int oneCount = 0;
         int twoCount = 0;
 
-        for (i = 0; i < array.length - 1; i++) {
+        for (i = 0; i < array.length; i++) {
 
             if (array[i] == 0) {
 
@@ -49,25 +49,13 @@ public class DutchNationalFlag {
     public static void main(String[] args) {
 
         DutchNationalFlag dutchNationalFlag = new DutchNationalFlag();
-        Scanner scanner = new Scanner(System.in);
+        Arrays arrayOperations = new Arrays();
 
-        System.out.println("Enter the size of the array: ");
-        int size = scanner.nextInt();
-
-        int[] array = new int[size];
-
-        System.out.println("Enter the elements of the array: ");
-
-        for (int i = 0; i < size; i++) {
-
-            array[i] = scanner.nextInt();
-        }
+        int[] array = arrayOperations.inputArray();
 
         dutchNationalFlag.sortedArray012(array);
 
-        PrintArray printArray = new PrintArray();
-
-        printArray.printArray(array);
+        arrayOperations.printArray(array);
     }
 
 }
