@@ -1,7 +1,5 @@
 package Array.problems;
 
-import java.util.Scanner;
-
 public class DutchNationalFlag {
 
     void sortedArray012(int[] array) {
