@@ -57,12 +57,11 @@ public class DutchNationalFlag {
 
     public static void main(String[] args) {
 
-        DutchNationalFlag dutchNationalFlag = new DutchNationalFlag();
-        Arrays arrayOperations = new Arrays();
+        ArrayReadAndWrite arrayOperations = new ArrayReadAndWrite();
 
         int[] array = arrayOperations.inputArray();
 
-        dutchNationalFlag.sortedArray012(array);
+        new DutchNationalFlag().sortedArray012(array);
 
         arrayOperations.printArray(array);
     }

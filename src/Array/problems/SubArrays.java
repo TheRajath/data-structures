@@ -81,9 +81,9 @@ public class SubArrays {
 
     public static void main(String[] args) {
 
-        Arrays arrays = new Arrays();
         SubArrays subArrays = new SubArrays();
         Scanner scanner = new Scanner(System.in);
+        ArrayReadAndWrite arrayReadAndWrite = new ArrayReadAndWrite();
 
         System.out.println("1. First SubArray indices for a Sum");
         System.out.println("2. Display All Sub Arrays");
@@ -91,7 +91,7 @@ public class SubArrays {
 
         int choice = scanner.nextInt();
 
-        int[] array = arrays.inputArray();
+        int[] array = arrayReadAndWrite.inputArray();
 
         if (choice == 1) {
 

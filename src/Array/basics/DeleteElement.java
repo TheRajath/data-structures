@@ -1,5 +1,7 @@
 package Array.basics;
 
+import Array.problems.ArrayReadAndWrite;
+
 import java.util.Scanner;
 
 import static Array.search.BinarySearch.binarySearch;
@@ -39,48 +41,21 @@ public class DeleteElement {
 
     public static void main(String[] args) {
 
-        DeleteElement deleteElement = new DeleteElement();
-
-        int size = 0;
-        int element = 0;
-        int choice = 0;
-
         Scanner scanner = new Scanner(System.in);
+        DeleteElement deleteElement = new DeleteElement();
+        ArrayReadAndWrite arrayReadAndWrite = new ArrayReadAndWrite();
 
         System.out.println("1. Delete in sorted Array");
         System.out.println("2. Delete in un-sorted Array");
-        System.out.println("Enter your choice:");
+        System.out.println("\nEnter your choice:");
 
-        if (scanner.hasNextInt()) {
+        int choice = scanner.nextInt();
 
-            choice = scanner.nextInt();
-        }
-
-        System.out.println("Enter the size of the array:");
-
-        if (scanner.hasNextInt()) {
-
-            size = scanner.nextInt();
-        }
-
-        int[] array = new int[size];
-
-        System.out.println("Enter the elements of the array:");
-
-        for (int i = 0; i < size; i++) {
-
-            if (scanner.hasNextInt()) {
-
-                array[i] = scanner.nextInt();
-            }
-        }
+        int[] array = arrayReadAndWrite.inputArray();
+        int size = array.length;
 
         System.out.println("Enter the element to be deleted:");
-
-        if (scanner.hasNextInt()) {
-
-            element = scanner.nextInt();
-        }
+        int element = scanner.nextInt();
 
         int sizeAfterDeletion;
 

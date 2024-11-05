@@ -38,7 +38,7 @@ public class PeakElement {
 
     public static void main(String[] args) {
 
-        Arrays arrayOperations = new Arrays();
+        ArrayReadAndWrite arrayOperations = new ArrayReadAndWrite();
 
         int[] array = arrayOperations.inputArray();
 

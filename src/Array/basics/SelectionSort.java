@@ -1,10 +1,10 @@
 package Array.basics;
 
-import java.util.Scanner;
+import Array.problems.ArrayReadAndWrite;
 
 public class SelectionSort {
 
-    private static void selectionSort(int[] array, int size) {
+    private void selectionSort(int[] array, int size) {
 
         for (int i = 0; i < size - 1; i++) {
 
@@ -26,38 +26,15 @@ public class SelectionSort {
 
     public static void main(String[] args) {
 
-        int size = 0;
+        ArrayReadAndWrite arrayReadAndWrite = new ArrayReadAndWrite();
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter the size of the array:");
-
-        if (scanner.hasNextInt()) {
-
-            size = scanner.nextInt();
-        }
-
-        int[] array = new int[size];
-
-        System.out.println("Enter the elements of the array:");
-
-        for (int i = 0; i < size; i++) {
-
-            if (scanner.hasNextInt()) {
-
-                array[i] = scanner.nextInt();
-            }
-        }
+        int[] array = arrayReadAndWrite.inputArray();
 
         System.out.println("Sorted array:");
 
-        selectionSort(array, size);
+        new SelectionSort().selectionSort(array, array.length);
 
-        for (int i = 0; i < size; i++) {
-
-            System.out.print(array[i] + " ");
-        }
-
+        arrayReadAndWrite.printArray(array);
     }
 
 }

@@ -1,5 +1,7 @@
 package Array.basics;
 
+import Array.problems.ArrayReadAndWrite;
+
 import java.util.Scanner;
 
 public class InsertElement {
@@ -28,51 +30,33 @@ public class InsertElement {
 
     public static void main(String[] args) {
 
-        InsertElement insertElement = new InsertElement();
-
-        int size = 0;
-        int element = 0;
-        int position = 0;
-        int choice = 0;
-
         Scanner scanner = new Scanner(System.in);
+        InsertElement insertElement = new InsertElement();
+        ArrayReadAndWrite arrayReadAndWrite = new ArrayReadAndWrite();
 
         System.out.println("1. Insert in sorted Array");
         System.out.println("2. Insert in un-sorted Array");
         System.out.println("Enter your choice:");
 
-        if (scanner.hasNextInt()) {
-
-            choice = scanner.nextInt();
-        }
+        int choice = scanner.nextInt();
 
         System.out.println("Enter the size of the array:");
-
-        if (scanner.hasNextInt()) {
-
-            size = scanner.nextInt();
-        }
+        int size = scanner.nextInt();
 
         int sizeWithExtraElement = size + 1;
-
         int[] array = new int[sizeWithExtraElement];
 
         System.out.println("Enter the elements of the array:");
 
         for (int i = 0; i < size; i++) {
 
-            if (scanner.hasNextInt()) {
-
-                array[i] = scanner.nextInt();
-            }
+            array[i] = scanner.nextInt();
         }
 
         System.out.println("Enter the element to be insert:");
+        int element = scanner.nextInt();
 
-        if (scanner.hasNextInt()) {
-
-            element = scanner.nextInt();
-        }
+        int position = 0;
 
         if (1 == choice) {
 
@@ -91,12 +75,7 @@ public class InsertElement {
         }
 
         System.out.println("Array after inserting " + element + " at position " + position);
-
-        for (int i = 0; i < sizeWithExtraElement; i++) {
-
-            System.out.print(array[i] + " ");
-        }
-
+        arrayReadAndWrite.printArrayWithSize(array, sizeWithExtraElement);
     }
 
 }

@@ -1,5 +1,7 @@
 package Array.basics;
 
+import Array.problems.ArrayReadAndWrite;
+
 import java.util.Scanner;
 
 import static java.lang.System.arraycopy;
@@ -72,47 +74,21 @@ public class Rotation {
 
     public static void main(String[] args) {
 
-        int size = 0;
-        int choice = 0;
-        int numberOfTimesToRotate = 0;
-
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter the size of the array:");
-
-        if (scanner.hasNextInt()) {
-
-            size = scanner.nextInt();
-        }
-
-        int[] array = new int[size];
-
-        System.out.println("Enter the elements of the array:");
-
-        for (int i = 0; i < size; i++) {
-
-            if (scanner.hasNextInt()) {
-
-                array[i] = scanner.nextInt();
-            }
-        }
-
-        System.out.println("Enter the number of times to rotate:");
-
-        if (scanner.hasNextInt()) {
-
-            numberOfTimesToRotate = scanner.nextInt();
-        }
+        ArrayReadAndWrite arrayReadAndWrite = new ArrayReadAndWrite();
 
         System.out.println("1. Left Rotate");
         System.out.println("2. Right Rotate");
         System.out.println("3. Right Rotate using temporary array");
-        System.out.println("Enter your choice:");
+        System.out.println("\nEnter your choice:");
 
-        if (scanner.hasNextInt()) {
+        int choice = scanner.nextInt();
 
-            choice = scanner.nextInt();
-        }
+        int[] array = arrayReadAndWrite.inputArray();
+        int size = array.length;
+
+        System.out.println("Enter the number of times to rotate:");
+        int numberOfTimesToRotate = scanner.nextInt();
 
         int[] rotatedArray = switch (choice) {
             case 1 -> leftRotate(array, size, numberOfTimesToRotate);
@@ -121,13 +97,8 @@ public class Rotation {
             default -> throw new IllegalStateException("Unexpected choice: " + choice);
         };
 
-        System.out.println("Rotated Array:");
-
-        for (int i = 0; i < size; i++) {
-
-            System.out.print(rotatedArray[i] + " ");
-        }
-
+        System.out.println("\nRotated Array:");
+        arrayReadAndWrite.printArray(rotatedArray);
     }
 
 }
