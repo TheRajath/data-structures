@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 public class Arrays {
 
+    Scanner scanner;
+
     int[] inputArray() {
 
-        Scanner scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
 
         System.out.println("Enter the size of the array: ");
         int size = scanner.nextInt();
