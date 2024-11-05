@@ -8,10 +8,10 @@ public class SubArrays {
 
     List<Integer> subArrayList(int[] array, long sum) {
 
-//        Given a 1-based indexing array arr[] of integers and an integer sum. You mainly need to return the left and
-//        right indexes(1-based indexing) of that subarray. In case of multiple subarrays, return the subarray
-//        indexes which come first on moving from left to right. If no such subarray exists return an array
-//        consisting of element -1.
+        /*Given a 1-based indexing array arr[] of integers and an integer sum. You mainly need to return the left and
+        right indexes(1-based indexing) of that subarray. In case of multiple subarrays, return the subarray
+        indexes which come first on moving from left to right. If no such subarray exists return an array
+        consisting of element -1.*/
 
         int last;
         int start = 0;

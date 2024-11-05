@@ -5,6 +5,12 @@ import java.util.List;
 
 public class PeakElement {
 
+    /*Given an unsorted array, find a peak element in it.
+    An element is considered to be peak if its value is greater than or equal to the values of
+    its adjacent elements (if they exist). There can be more than one peak elements in an array, we return any of them
+
+    Note: If the array is increasing then just print the last element will be the maximum value.*/
+
     List<Integer> findPeakElementIndexes(int[] array) {
 
         int length = array.length;
