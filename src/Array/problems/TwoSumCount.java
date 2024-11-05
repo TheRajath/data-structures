@@ -7,28 +7,10 @@ public class TwoSumCount {
     /*Given an array arr[] of n integers and a target value, the task is to find the number of pairs of integers in
     the array whose sum is equal to target.*/
 
-    static class Pair {
-
-        int first;
-        int second;
-
-        Pair(int first, int second) {
-
-            this.first = first;
-            this.second = second;
-        }
-
-        @Override
-        public String toString() {
-
-            return "(" + first + ", " + second + ")";
-        }
-    }
-
     int countPairs(int[] array, int target) {
 
         Map<Integer, Integer> frequency = new HashMap<>();
-        List<Pair> pairs = new ArrayList<>();
+        List<CustomPair> pairs = new ArrayList<>();
         int count = 0;
 
         for (int i : array) {
@@ -40,7 +22,7 @@ public class TwoSumCount {
 
                 for (int j = 0; j < occurrences; j++) {
 
-                    pairs.add(new Pair(target - i, i));
+                    pairs.add(new CustomPair(target - i, i));
                 }
             }
 
@@ -48,6 +30,7 @@ public class TwoSumCount {
         }
 
         System.out.println("Pairs with sum " + target + " are: " + pairs);
+
         return count;
     }
 
