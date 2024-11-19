@@ -26,6 +26,16 @@ public class MatrixReadAndWrite {
         return matrixInput(rowsAndColumns, rowsAndColumns);
     }
 
+    void printMatrix(int[][] matrix) {
+
+        for (int[] rows : matrix) {
+            for (int row : rows) {
+                System.out.print(row + " ");
+            }
+            System.out.println();
+        }
+    }
+
     private int[][] matrixInput(int row, int column) {
 
         int[][] matrix = new int[row][column];
